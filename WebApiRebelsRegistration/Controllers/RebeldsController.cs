@@ -5,93 +5,93 @@ using WebApiRebelsRegistration.Models.Repositories;
 
 namespace WebApiRebelsRegistration.Controllers
 {
-    public class PlanetsController : Controller
+    public class RebeldsController : Controller
     {
-        private readonly IRepositoryPlanets Repository = new RepositoryPlanets();
+        private readonly IRepositoryRebelds Repository = new RepositoryRebelds();
 
-        // GET: Planets
+        // GET: Rebelds
         public ActionResult Index()
         {
-            return View(Repository.GetAllPlanets().ToList());
+            return View(Repository.GetAllRebelds().ToList());
         }
 
-        // GET: Planets/Details/5
+        // GET: Rebelds/Details/5
         public ActionResult Details(int id)
         {
-            Planets planets = Repository.GetPlanet(id);
-            if (planets == null)
+            Rebelds rebelds = Repository.GetRebeld(id);
+            if (rebelds == null)
             {
                 return HttpNotFound();
             }
-            return View(planets);
+            return View(rebelds);
         }
 
-        // GET: Planets/Create
+        // GET: Rebelds/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Planets/Create
+        // POST: Rebelds/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name")] Planets planets)
+        public ActionResult Create([Bind(Include = "Id,Name")] Rebelds rebelds)
         {
             if (ModelState.IsValid)
             {
-                Repository.AddPlanet(planets);
+                Repository.AddRebeld(rebelds);
                 return RedirectToAction("Index");
             }
 
-            return View(planets);
+            return View(rebelds);
         }
 
-        // GET: Planets/Edit/5
+        // GET: Rebelds/Edit/5
         public ActionResult Edit(int id)
         {
-            Planets planets = Repository.GetPlanet(id);
-            if (planets == null)
+            Rebelds rebelds = Repository.GetRebeld(id);
+            if (rebelds == null)
             {
                 return HttpNotFound();
             }
-            return View(planets);
+            return View(rebelds);
         }
 
-        // POST: Planets/Edit/5
+        // POST: Rebelds/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] Planets planets)
+        public ActionResult Edit([Bind(Include = "Id,Name")] Rebelds rebelds)
         {
             if (ModelState.IsValid)
             {
-                Repository.UpdatePlanet(planets);
+                Repository.UpdateRebeld(rebelds);
                 return RedirectToAction("Index");
             }
-            return View(planets);
+            return View(rebelds);
         }
 
-        // GET: Planets/Delete/5
+        // GET: Rebelds/Delete/5
         public ActionResult Delete(int id)
         {
-            Planets planets = Repository.GetPlanet(id);
-            if (planets == null)
+            Rebelds rebelds = Repository.GetRebeld(id);
+            if (rebelds == null)
             {
                 return HttpNotFound();
             }
-            return View(planets);
+            return View(rebelds);
         }
 
-        // POST: Planets/Delete/5
+        // POST: Rebelds/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Planets planets = Repository.GetPlanet(id);
-            Repository.DeletePlanet(planets);
+            Rebelds rebelds = Repository.GetRebeld(id);
+            Repository.DeleteRebeld(rebelds);
             return RedirectToAction("Index");
         }
 

@@ -139,14 +139,21 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Rebelds\Create.cshtml" />
+    <Content Include="Views\Rebelds\Delete.cshtml" />
+    <Content Include="Views\Rebelds\Details.cshtml" />
+    <Content Include="Views\Rebelds\Edit.cshtml" />
+    <Content Include="Views\Rebelds\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\PlanetsController.cs" />
+    <Compile Include="Controllers\RebeldsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MetaData\RebeldMetadata.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,7 +180,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Repositories\IRepositoryPlanets.cs" />
+    <Compile Include="Models\Repositories\IRepositoryRebelds.cs" />
     <Compile Include="Models\Repositories\RepositoryPlanets.cs" />
+    <Compile Include="Models\Repositories\RepositoryRebelds.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
