@@ -1,0 +1,42 @@
+﻿@model WebApiRebelsRegistration.Models.RegisterRebelds
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RegisterRebelds</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRegsiter)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateRegsiter)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Planets.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Planets.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rebelds.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rebelds.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
