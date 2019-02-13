@@ -1,29 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApiRebelsRegistration.Models;
+using WebApiRebelsRegistration.Models.Repositories;
 
 namespace WebApiRebelsRegistration.Controllers
 {
     public class RegisterRebeldsController : Controller
     {
         private JorgeMercadoEntities db = new JorgeMercadoEntities();
+        private readonly IRepositoryRegisterRebelds Repository = new RepositoryRegisterRebelds();
 
         // GET: RegisterRebelds
         public ActionResult Index()
         {
+
             var registerRebelds = db.RegisterRebelds.Include(r => r.Planets).Include(r => r.Rebelds);
             return View(registerRebelds.ToList());
+
+            /*
+            return View(Repository.GetAllRegsiter().ToList());
+            */
         }
 
         // GET: RegisterRebelds/Details/5
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -34,6 +38,16 @@ namespace WebApiRebelsRegistration.Controllers
                 return HttpNotFound();
             }
             return View(registerRebelds);
+
+
+            /*
+            RegisterRebelds register = Repository.GetRegister(id);
+            if (register == null)
+            {
+                return HttpNotFound();
+            }
+            return View(register);
+            */
         }
 
         // GET: RegisterRebelds/Create

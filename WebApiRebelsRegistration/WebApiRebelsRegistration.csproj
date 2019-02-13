@@ -155,6 +155,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MetaData\RebeldMetadata.cs" />
+    <Compile Include="Models\MetaData\RegisterRebeldsMetadata.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -182,6 +183,8 @@
     </Compile>
     <Compile Include="Models\Repositories\IRepositoryPlanets.cs" />
     <Compile Include="Models\Repositories\IRepositoryRebelds.cs" />
+    <Compile Include="Models\Repositories\IRepositoryRegisterRebelds.cs" />
+    <Compile Include="Models\Repositories\RepositoryRegisterRebelds.cs" />
     <Compile Include="Models\Repositories\RepositoryPlanets.cs" />
     <Compile Include="Models\Repositories\RepositoryRebelds.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
