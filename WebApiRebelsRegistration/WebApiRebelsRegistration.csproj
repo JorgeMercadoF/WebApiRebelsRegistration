@@ -150,6 +150,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\PlanetsController.cs" />
     <Compile Include="Controllers\RebeldsController.cs" />
+    <Compile Include="Controllers\RegisterRebeldsAPIController.cs" />
     <Compile Include="Controllers\RegisterRebeldsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
